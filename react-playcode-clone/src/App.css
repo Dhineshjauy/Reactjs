@@ -1,0 +1,187 @@
+/* styles/global.css */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --background: #0f172a;
+  --editor-bg: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --success: #22c55e;
+  --error: #ef4444;
+  --radius: 6px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* App Styles */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(145deg, var(--background), #1e293b);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+/* Editor Container */
+.editor-container {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--editor-bg);
+}
+
+/* Resizable Component */
+.react-resizable {
+  position: relative;
+  background: var(--editor-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s ease;
+}
+
+.react-resizable:hover {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.resize-handle {
+  position: absolute;
+  right: -5px;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  cursor: col-resize;
+  z-index: 10;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.react-resizable:hover .resize-handle {
+  opacity: 0.8;
+}
+
+/* Editor Component */
+.monaco-editor {
+  border-radius: var(--radius) !important;
+}
+
+/* Preview Component */
+.preview {
+  flex: 1;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Package Manager */
+.package-manager {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.package-manager input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--editor-bg);
+  color: var(--text-primary);
+  width: 200px;
+  transition: all 0.2s ease;
+}
+
+.package-manager input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.package-manager button {
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.package-manager button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.installed-packages {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.installed-packages span {
+  padding: 0.25rem 0.5rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Error Message */
+.error {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background: var(--error);
+  color: white;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
