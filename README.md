@@ -31,16 +31,18 @@ A feature-rich code editor clone with live preview and NPM package integration, 
 ```bash
 git clone https://github.com/yourusername/react-playcode-clone.git
 cd react-playcode-clone
+```
 Install dependencies:
 
-bash
-Copy
+```bash
 npm install
+```
 Start development server:
 
-bash
-Copy
+```bash
 npm start
+```
+
 Open in browser:
 
 ```bash
@@ -48,47 +50,47 @@ http://localhost:3000
 ```
 
 ## Usage
-Code Editing:
+ Code Editing:
 
-Write React components in the editor
+ - Write React components in the editor
 
-See real-time updates in the preview panel
+ - See real-time updates in the preview panel
 
-Package Management:
+## Package Management:
 
-Enter package names in the input field (e.g., lodash)
+ - Enter package names in the input field (e.g., lodash)
 
-Click "Install Package" to add dependencies
+ - Click "Install Package" to add dependencies
 
-Installed packages show in the header
+ - Installed packages show in the header
 
-Layout Control:
+## Layout Control:
 
 Drag the resize handle between editor and preview
 
 Error messages appear at bottom on compilation issues
 
-Tech Stack
-Frontend:
+## Tech Stack
+ Frontend:
 
-React 18
+ - React 18
 
-Monaco Editor
+ - Monaco Editor
 
-Babel Standalone
+ - Babel Standalone
 
-react-resizable
+ - react-resizable
 
-Build Tools:
+## Build Tools:
 
-Create React App
+ - Create React App
 
-Webpack
+ - Webpack
 
-Babel
+ - Babel
 
-Project Structure
-Copy
+## Project Structure
+```bash
 react-playcode-clone/
 ├── public/
 ├── src/
@@ -102,3 +104,4 @@ react-playcode-clone/
 │   └── index.js
 ├── package.json
 └── README.md
+```
